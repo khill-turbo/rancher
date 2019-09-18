@@ -1,0 +1,42 @@
+Rancher
+
+Kubernetes and DockerSwarm are Rancher competitors
+
+
+Go Rancher through tutorial
+http://rancher.com/docs/rancher/v1.6/en/quick-start-guide/
+Skip over all parts about "hosts" for mac or windows
+
+
+Start Rancher Server
+
+sudo docker run -d --restart=unless-stopped -p 8080:8080 rancher/server:stable
+http://localhost:8080
+
+
+http://rancher.com/docs/rancher/v1.6/en/configuration/access-control/
+Restrict Access Part 1
+http://localhost:8080/ → Admin → Access Control → go to "Setup a GitHub Application" section
+Log into SIE github → Settings → OAuth applications → Developer Application → Register A New Application → Enter info
+http://localhost:8080/ → Enter github enter github enterprise "Client ID" and "Client Secret" → Select Secure "User private GitHub Enterprise installation"
+→ Enter "Enterprise Host" github.sony.com → Save
+http://localhost:8080/ →  Authenticate with github → GitHub Enterprise pop-up window click "Authorize Application" button
+This message should appear on your Rancher:
+
+GitHub is enabled
+Rancher is configured to allow access to no organizations and 1 user.
+In https://github.sony.com/settings/applications you should see "My Rancher" now in the Authorized Applications list
+
+
+Configuring Session Timeouts
+
+    Under Admin -> Setting -> Advanced Settings, click on the I understand that I can break things by changing advanced settings.
+    Find the api.auth.jwt.token.expiry setting and click on the edit icon.
+    Update the timeout session value and click on Save. The value is in milliseconds.
+
+
+Rancher uses docker compose files to create stack (mini VM / namespace)
+
+Rancher catalog - versioning your stack - example using a new version of docker
+
+
