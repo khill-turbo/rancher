@@ -3,9 +3,9 @@ Rancher
 Kubernetes and DockerSwarm are Rancher competitors
 
 
-Go Rancher through tutorial
+Rancher tutorial
 http://rancher.com/docs/rancher/v1.6/en/quick-start-guide/
-Skip over all parts about "hosts" for mac or windows
+
 
 
 Start Rancher Server
